@@ -1,10 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["es2015", "dom"],
-    "module": "commonjs",
+    "baseUrl": ".",
+    "paths": {
+      "components/*": ["./components/*"]
+    },
+    "declaration": true,
+    "declarationMap": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "importHelpers": true,
+    "noEmitHelpers": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
     "jsx": "react",
-    "baseUrl": "."
-  },
-  "exclude": ["node_modules", "**/*.test.ts"]
+    "target": "ES2019"
+  }
 }

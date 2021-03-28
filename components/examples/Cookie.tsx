@@ -1,21 +1,21 @@
-import * as React from "react";
-import * as cookies from "js-cookie";
-import { Dynamic } from "monobase";
-import { pill } from "components/theme";
+import * as React from 'react'
+import * as cookies from 'js-cookie'
+import { Dynamic } from 'monobase'
+import { pill } from 'components/theme'
 
-const CookieKey = "CookieComponentValue";
+const CookieKey = 'CookieComponentValue'
 
-class Cookie extends React.Component<{}, { value: string }> {
-  state = { value: "" };
+class Cookie extends React.Component<Record<string, never>, { value: string }> {
+  state = { value: '' }
 
   componentDidMount() {
-    this.setState({ value: cookies.get(CookieKey) || "" });
+    this.setState({ value: cookies.get(CookieKey) || '' })
   }
 
-  onChange = event => {
-    this.setState({ value: event.target.value });
-    cookies.set(CookieKey, event.target.value);
-  };
+  onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({ value: event.target.value })
+    cookies.set(CookieKey, event.target.value)
+  }
 
   render() {
     return (
@@ -26,13 +26,13 @@ class Cookie extends React.Component<{}, { value: string }> {
         onChange={this.onChange}
         style={{
           ...pill,
-          width: "100%",
-          textAlign: "center",
-          border: "1px solid #EEE"
+          width: '100%',
+          textAlign: 'center',
+          border: '1px solid #EEE',
         }}
       />
-    );
+    )
   }
 }
 
-export default Dynamic(Cookie);
+export default Dynamic(Cookie)

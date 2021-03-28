@@ -1,23 +1,23 @@
-import * as React from "react";
-import { Dynamic } from "monobase";
-import { pill } from "components/theme";
+import * as React from 'react'
+import { Dynamic } from 'monobase'
+import { pill } from 'components/theme'
 
-class Colors extends React.Component<{}, { color: string }> {
-  state = { color: "" };
+class Colors extends React.Component<Record<string, never>, { color: string }> {
+  state = { color: '' }
 
-  updateInput = event => {
-    this.setState({ color: event.target.value });
-  };
+  updateInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({ color: event.target.value })
+  }
 
   render() {
     return (
-      <div style={{ width: 300, margin: "auto" }}>
+      <div style={{ width: 300, margin: 'auto' }}>
         <div
           style={{
             height: 300,
-            borderRadius: "8px 8px 0 0",
-            transition: "background-color .2s",
-            backgroundColor: this.state.color ? this.state.color : "#EEE"
+            borderRadius: '8px 8px 0 0',
+            transition: 'background-color .2s',
+            backgroundColor: this.state.color ? this.state.color : '#EEE',
           }}
         />
         <input
@@ -27,16 +27,16 @@ class Colors extends React.Component<{}, { color: string }> {
           onChange={this.updateInput}
           style={{
             ...pill,
-            width: "100%",
-            borderTop: "none",
-            textAlign: "center",
-            border: "1px solid #EEE",
-            borderRadius: "0 0 8px 8px"
+            width: '100%',
+            borderTop: 'none',
+            textAlign: 'center',
+            border: '1px solid #EEE',
+            borderRadius: '0 0 8px 8px',
           }}
         />
       </div>
-    );
+    )
   }
 }
 
-export default Dynamic(Colors);
+export default Dynamic(Colors)

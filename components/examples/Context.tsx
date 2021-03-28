@@ -1,18 +1,18 @@
-import * as React from "react";
-import { Dynamic } from "monobase";
+import * as React from 'react'
+import { Dynamic } from 'monobase'
 
-export const CountContext = React.createContext({ count: 1 });
+export const CountContext = React.createContext({ count: 1 })
 
 function ContextCount() {
-  const context = React.useContext(CountContext);
-  return <div>Count: {context.count}</div>;
+  const context = React.useContext(CountContext)
+  return <div>Count: {context.count}</div>
 }
 
 function ContextExample() {
-  const [count, setCount] = React.useState(0);
+  const [count, setCount] = React.useState(0)
 
   function onClick() {
-    setCount(count + 1);
+    setCount(count + 1)
   }
 
   return (
@@ -22,7 +22,7 @@ function ContextExample() {
       <ContextCount />
       <ContextCount />
     </CountContext.Provider>
-  );
+  )
 }
 
-export default Dynamic(ContextExample);
+export default Dynamic(ContextExample)

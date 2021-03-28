@@ -1,21 +1,21 @@
-import * as React from "react";
+import * as React from 'react'
 
-import Template from "components/Template";
+import Template from 'components/Template'
 
-import Timer from "components/examples/Timer";
-import Mouse from "components/examples/Mouse";
-import Button from "components/examples/Button";
-import Styled from "components/examples/Styled";
-import Colors from "components/examples/Colors";
-import Cookie from "components/examples/Cookie";
-import Visible from "components/examples/Visible";
-import Context from "components/examples/Context";
+import Timer from 'components/examples/Timer'
+import Mouse from 'components/examples/Mouse'
+import Button from 'components/examples/Button'
+import Styled from 'components/examples/Styled'
+import Colors from 'components/examples/Colors'
+import Cookie from 'components/examples/Cookie'
+import Visible from 'components/examples/Visible'
+import Context from 'components/examples/Context'
 
 export default function render() {
   return (
     <Template>
-      <span style={{ textAlign: "center" }}>
-        <section style={{ padding: "60px" }}>
+      <span style={{ textAlign: 'center' }}>
+        <section style={{ padding: '60px' }}>
           <h1>Welcome to Monobase</h1>
           <p>A simple React based static site generator</p>
         </section>
@@ -32,9 +32,7 @@ export default function render() {
           <Styled />
         </Example>
         <Example title="Visible">
-          <Visible inset={100}>
-            I'm like a refrigerator light. Or Schrödingers cat.
-          </Visible>
+          <Visible inset={100}>I'm like a refrigerator light. Or Schrödingers cat.</Visible>
         </Example>
         <Example title="Enter a color name">
           <Colors />
@@ -47,15 +45,15 @@ export default function render() {
         </Example>
       </span>
     </Template>
-  );
+  )
 }
 
-function Example(props) {
+function Example(props: { title: React.ReactNode; children: React.ReactNode }) {
   return (
     <section
       style={{
-        textAlign: "center",
-        padding: "80px 10px"
+        textAlign: 'center',
+        padding: '80px 10px',
       }}
     >
       <h3
@@ -64,12 +62,12 @@ function Example(props) {
           fontWeight: 700,
           margin: 0,
           paddingBottom: 40,
-          lineHeight: 1
+          lineHeight: 1,
         }}
       >
         {props.title}
       </h3>
-      <div style={{ textAlign: "center" }}>{props.children}</div>
+      <div style={{ textAlign: 'center' }}>{props.children}</div>
     </section>
-  );
+  )
 }
